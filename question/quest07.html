@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>7. 지금은 오전인가요? 오후인가요?  물어보고,
+        오전이면 “굿모닝!” 3번 출력, 오후이면 “굿애프터눈!”5번출력
+       아니면 “굿나잇!” 10번 출력
+    </h3>
+
+    <script>
+        let time = prompt("지금은 오전인가요? 오후인가요?");
+        if(time=="오전"){
+            for(i=1;i<=3;i++){
+                document.write("굿모닝!");
+            }
+        }else if(time=="오후"){
+            for(i=1;i<=5;i++){
+                document.write("굿에프터눈!");
+            }
+        }else{
+            for(i=1;i<=10;i++){
+                document.write("굿나잇!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+</head>
+<body>
+    <h1>로그인</h1>
+    아이디 : <input type="text" id="userid"><br><br>
+    비밀번호 : <input type="text" id="userpw"><br><br>
+    <button onclick="login()">Login</button>
+    <hr color="red">
+    <div id="result"></div>
+
+    <script>
+        function login(){
+            let id=document.getElementById("userid").value;
+            let pw=document.getElementById("userpw").value;
+            let check=document.getElementById("result");
+    
+            if(id==""){
+                alert("아이디를 입력하세요.");
+                document.getElementById("userid").focus();
+                return;
+            }else if(pw==""){
+                alert("비밀번호를 입력하세요.");
+                document.getElementById("userpw").focus();
+                return;
+            }
+            if(id=="root"&&pw==1234){
+                check.innerHTML="<h3 style='color:green'>"+ id +"님 환영합니다!</h3>";
+            }else if(id!="root"||pw!=1234){
+                check.innerHTML="<h3 style='color:red'>실패!! 아이디 또는 비밀번호가 틀려요</h3>";
+            }
+        } 
+    </script>
+</body>
+</html>

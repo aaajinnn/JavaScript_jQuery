@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page21_function.hrml</title>
+    <style>
+        #result{
+            background-color: lightgoldenrodyellow;
+            height: 150px;
+        }
+        body{
+            padding: 2em;
+        }
+    </style>
+    <script>
+        // 사각형의 면적 구하기
+        function rectangle(){
+            //1. 사용자가 입력한 가로값, 세로값 얻어오기
+            //document.getElementById("아이디명") ===> html객체(input)
+            let w = document.getElementById("n1").value; //===>input에 입력한 value값
+            //alert(w);
+            let h = document.getElementById("n2").value; //===>input에 입력한 value값
+            //alert(h);
+
+            //2. 입력하지않았을 시 유효성체크(alert)
+            if(w==""){
+                alert("가로값을 입력하세요.");
+                document.getElementById("n1").focus();
+                return;
+            }else if(h==""){
+                alert("세로값을 입력하세요.");
+                document.getElementById("n2").focus();
+                return;
+            }
+
+            //3. 사각형 면적 구해 id가 result인 곳에 출력하기
+            let area=parseFloat(w)*parseFloat(h);
+            let obj=document.getElementById("result");
+            // div는 value속성이 없음
+            // alert(obj); ==> [object HTMLDivElement]
+            // value 대신 obj.innerHTML=""; 
+            obj.innerHTML=`<h3>가로값 : ${w}cm</h3>
+                <h3>세로값 : ${h}cm </h3>
+                <h3>사각형 면적 : ${area}cm</h3>
+            `;
+        }
+
+        // 원의 면적 구하는 함수 구성하고 호출하기
+        const circle = function(){
+            let r = document.getElementById("r").value; 
+            let obj=document.getElementById("result");
+            const PI = 3.14; //상수
+            let area=(PI*r*r).toFixed(2);
+            //alert(area);
+            obj.innerHTML="<h3>반지름이 "+ r +"cm인 원의 면적 : "+ area +"cm</h3>";
+        }
+    </script>
+</head>
+<body>
+    가로값 : <input type="text" id="n1"><br>
+    세로값 : <input type="text" id="n2"><br>
+    <button onclick="rectangle()">사각형의 면적 구하기</button>
+    <hr>
+    반지름 : <input type="text" id="r"><br>
+    <button onclick="circle()">원의 면적 구하기</button>
+    <hr color="red">
+    <div id="result">
+
+    </div>
+</body>
+</html>
+<!-- page21_function.hrml -->

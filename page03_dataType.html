@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page03_dataType.html</title>
+</head>
+<body>
+    <h1>자바스크립트의 자료 유형 (Data Type)</h1>
+    <h2>기본자료형 : number(정수, 실수), boolean, string, undefined</h2>
+    <h2>참조형(부품) : object(객체), function</h2>
+    <hr>
+    <script>
+        //document.write(1+2)
+        //데이터값을 변수에 보관 => 변수 선언 (var, let, const)
+        var money; //변수선언
+        // alert(money); ==> undefined
+        money=100; // 초기값을 할당 ==> 값을 할당할 때 자료형이 결정된다. number
+        document.write(money, "<hr>");
+
+        //typeof 연산자를 이용해보자
+        document.write("money의 자료형: ", typeof money, "<br>" );
+
+        money="Hello"; //자료형이 변경된다. ==> string
+        document.write("money의 자료형: ", typeof money, "<hr>" );
+
+        //변수명 : 명사형, 소문자로 시작, camel표기법
+        let myNum=78.56; //실수형 number
+        document.write(myNum, "<br>");
+        document.write("myNum의 자료형: ", typeof myNum, "<hr>");
+        money=100;
+        document.write(money+myNum, "<br>"); //자료형이 number로 같을 때 계산도 가능
+        document.write(money-myNum, "<br>");
+        document.write(money*myNum, "<br>");
+        document.write(money/myNum, "<hr>");
+
+        //문자열에 + 연산자를 사용하면 문자열 결합이 일어난다.
+        let str="Good ";
+        let word="Afternoon!";
+        document.write(str+word, "<br>");
+        document.write(str+money,"<hr>");
+
+        //boolean유형(true, false)
+        let bool=true; 
+        document.write(bool, "<br>");
+        document.write("bool의 자료형: ", typeof bool, "<hr>");
+        let bool2=2>3;
+        document.write(bool2, "<br>");
+    </script>
+</body>
+</html>

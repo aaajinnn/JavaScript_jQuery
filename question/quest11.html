@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>11. [go 100]버튼을 누르면
+        1	부터 100까지 브라우저에 출력되는
+        go()함수를 만들어실행해보세요.
+   </h3>
+   <button id="btn" onclick="go()">go 100</button>
+
+   <script>
+        function go(){
+            let obj=document.getElementById("result")
+            for(i=1;i<=100;i++){
+                obj.innerHTML += i+" ";
+            }
+        }
+   </script>
+   <hr>
+   <div id="result"></div>
+</body>
+</html>

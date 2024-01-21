@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page16_if.html</title>
+</head>
+<body>
+    <h1>다중 if문</h1>
+    <script>
+        var num=10;
+        var result=""; //빈문자열로 초기화
+        if(num>0){
+            result="양수입니다.";
+        }else if(num==0){
+            result="Zero 입니다."
+        }else{
+            result="음수입니다.";
+        }
+        document.write(`<h2>${result}</h2>`);
+    </script>
+    <hr color="red">
+
+    <script>
+        //prompt이용해서 "어느 검색사이트를 주로 이용하세요?"
+        //네이버 => 네이버로 이동, 구글=>구글로이동, 다음=>다음으로이동
+        //그외 다른 사이트라면?
+        //현재 문서를 보여주되 "그런 사이트는 안가요" 메시지출력
+
+        // var search = window.prompt("어느 검색사이트를 주로 이용하세요?");
+        // let url;
+        // if(search=="네이버"){
+        //     url="http://www.naver.com";
+        // }else if(search=="구글"){
+        //     url="http://google.com";
+        // }else if(search=="다음"){
+        //     url="http://daum.net";
+        // }else{
+        //     url="page16_if.html";
+        // }
+        // window.location.href=url;
+
+        var site = window.prompt("어느 검색사이트를 주로 이용하세요?");
+        if(site=="네이버"){
+            location.href="http://www.naver.com";
+        }else if(site=="구글"){
+            location.href="http://google.com";
+        }else if(site=="다음"){
+            location.href="http://daum.net";
+        }else{
+            document.write("그런 사이트는 안가요");
+        }
+        
+    </script>
+</body>
+</html>
+<!-- page16_if.html -->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page10_quiz.html</title>
+</head>
+<body>
+    교안 34p 1,2,3,4번 문제 풀어보기
+    <h1>1. 물건 하나당 가격이 1000, 물건의 개수5 일때 물건 전체 가격은?</h1>
+    <script>
+        let price=parseInt(window.prompt("1-1. 물건의 하나당 가격을 입력하세요."));
+        let count=parseInt(window.prompt("1-2. 물건의 하나당 개수를 입력하세요."));
+        document.write("<h2>물건의 전체 가격은 "+(price*count)+"원 입니다</h2>");
+    </script>
+    <hr>
+    <h1>2. 전체 구매금액이 1000, 물건 하나당 가격이 200 일때 물건 개수는?</h1>
+    <script>
+        let totalPrice=parseInt(window.prompt("2-1. 전체 구매금액을 입력하세요."));
+        price=window.parseInt(prompt("2-1. 물건의 하나당 가격을 입력하세요."));
+        document.write("<h2>물건의 하나당 개수는 "+(totalPrice/price)+"개 입니다</h2>");
+    </script>
+    <hr>
+    <h1>3. 사과의 가격이 2000, 배의 가격이 3000, 사과 구매개수 3, 배 구매개수 2 일때 사과 구매 금액이 배 구매 금액보다 높을까?</h1>
+    <script>
+        let applePrice=parseInt(window.prompt("3-1. 사과의 가격을 입력하세요."));
+        let pearPrice=parseInt(window.prompt("3-2. 배의 가격을 입력하세요."));
+        let appleCount=parseInt(window.prompt("3-3. 사과의 개수 입력하세요."));
+        let pearCount=parseInt(window.prompt("3-4. 배의 개수 입력하세요."));
+        document.write("<h2>"+ (applePrice*appleCount>pearPrice*pearCount) +"</h2>");
+    </script>
+    <hr>
+    <h1>4. 어제의 온도 25도, 오늘의 온도 10도 일때 어제와 오늘 온도의 평균은?</h1>
+    <script>
+        let yesterTem=parseInt(window.prompt("4-1. 어제의 온도를 입력하세요."));
+        let todayTem=parseInt(window.prompt("4-2. 오늘의 온도를 입력하세요."));
+        document.write("<h2>어제와 오늘 온도의 평균은 "+ ((yesterTem+todayTem)/2) +"도 입니다.");
+    </script>    
+</body>
+</html>
+<!--page10_quiz.html-->

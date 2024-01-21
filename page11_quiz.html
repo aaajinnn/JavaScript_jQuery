@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page11_quiz.html</title>
+</head>
+<body>
+    <h1>적정 체중을 구하는 프로그램</h1>
+    <h3 style="color: red;">적정체중 = (신장-100)*0.9를 적정체중으로 봅니다.</h3>
+    <hr>
+    <script>
+        let name=prompt("이름을 입력하세요.");
+        let height=parseFloat(prompt("키를 입력하세요."));
+        let weigth=parseFloat(prompt("몸무게를 입력하세요."));
+        let nomalweigth = (height - 100) * 0.9; 
+        let standard = nomalweigth * 1.1
+        let str="";
+        
+        if(weigth > (nomalweigth+(nomalweigth/10))){
+            str="당신은 과체중";
+        }else if(weigth < (nomalweigth-(nomalweigth/10))){
+           str="당신은 체중미달";
+        }else{
+            str="당신은 표준체중";
+        }
+
+        document.write("<h2>이름 : " + name + "</h2>");
+        document.write("<h2>키 : " + height + "</h2>");
+        document.write("<h2>몸무게 : " + weigth + "</h2>");
+        document.write("<h2>적정체중 : "+ nomalweigth + "</h2>");
+        document.write("<h2>"+str+"</h2>");
+        
+    </script>
+</body>
+</html>
+<!--page11_quiz.html-->

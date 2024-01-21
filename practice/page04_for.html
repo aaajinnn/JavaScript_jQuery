@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+        div{
+            display: inline-block;
+            padding: 20px;
+            margin: 15px;
+            border: 1px solid black;
+            line-height: 2;
+        }
+        div h3{
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>반복문을 이용한 구구단 만들기</h1>
+
+    <script>
+        for(let i=2;i<=9;i++){
+            document.write("<div>");
+            document.write("<h3>" + i + "단</h3>");
+            for(let j=1;j<=9;j++){
+                document.write(i + "x" + j + "=" +(i*j) + "<br>");
+            }
+            document.write("</div>");
+            
+            // if(i == 3) break; ==> 구구단 3단까지만 표시하기(값이 3이면 break문을 실행한다.)
+        }
+    </script>
+</body>
+</html>

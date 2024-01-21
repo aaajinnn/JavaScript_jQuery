@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 실습</title>
+    <style>
+        input[readonly]{
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <h1>연산자 실습</h1>
+    <form name="frm">
+        <label for="kor">국 어</label>
+        <input type="text" id="kor"><br>
+
+        <label for="math">수 학</label>
+        <input type="text" id="math"><br>
+
+        <label for="eng">영 어</label>
+        <input type="text" id="eng"><br>
+
+        <label for="sum">합 계</label>
+        <input type="text" id="sum" readonly><br>
+
+        <label for="avg">평 균</label>
+        <input type="text" id="avg" readonly><br>
+        <br>
+        <input type="button" value="성적내기" onclick="grade()">
+        <input type="reset" value="다시쓰기">
+    </form>
+    <script>
+        function grade(){
+            //1. 사용자가 입력한 국어,수학,영어 점수 얻어오기
+            let kor=frm.kor.value;
+            //alert(kor);
+            let math=frm.math.value;
+            let eng=frm.eng.value;
+
+            //2. 사용자가 입력한 국어,수학,영어 점수 유효성검사
+            if(kor==""){
+                alert("국어 점수를 입력하세요.");
+                frm.kor.focus();
+                return;
+            }
+            if(math==""){
+                alert("수학 점수를 입력하세요.");
+                frm.math.focus();
+                return;
+            }
+            if(eng==""){
+                alert("영어 점수를 입력하세요.");
+                frm.eng.focus();
+                return;
+            }
+
+            //3. 합계와 평균점수 구하기
+            let sum=parseFloat(kor)+parseFloat(math)+parseFloat(eng);
+            frm.sum.value=sum.toFixed(2);
+            frm.avg.value=(sum/3).toFixed(2);
+        }
+    </script>
+</body>
+</html>

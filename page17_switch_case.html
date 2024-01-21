@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page17_switch_case.html</title>
+</head>
+<body>
+    <h1>조건문 - switch~case문</h1>
+    <!-- switch(변수 or 수식){
+            case 값1;
+                실행문; //변수가 값과 같다면 실행하고
+                break;  //switch를 빠져나가라
+            case 값2;
+                실행문; //위 경우가 아닐경우 밑으로내려가 반복
+                break;
+            case 값3;
+                실행문; 
+                break;
+            default:    //위 값들과 다른 나머지경우라면
+                실행문;
+        } 
+    -->
+    
+    <script>
+        let oper = prompt("[+,-,*,/]연산자 중 하나를 입력하세요.");
+        let n1=5;
+        let n2=7;
+        // if문으로 했을 시
+        /* if(oper=="+"){
+             document.write(`${n1} ${oper} ${n2} = ${n1+n2}<br>`);
+        }*/
+
+        let result="";
+        switch(oper){
+            case "+":
+                result=n1+n2;
+                break; //break가 없을경우 아래 실행문을 실행하여 출력함
+            case "-":
+                result=n1-n2;
+                break;
+            case "*":
+                result=n1*n2;
+                break;
+            case "/": 
+                result=n1/n2;
+                break;
+            default:
+                alert("그런 연산자는 없어요");
+                // 여기엔 return 쓸 수 없음
+                location.reload(); //새로고침
+        }
+        document.write(`<h2>${n1} ${oper} ${n2} = ${result}</h2><br>`);
+    </script>
+</body>
+</html>
+<!--page17_switch_case.html-->

@@ -1,0 +1,120 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrap{
+    border: 1px solid red;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 1200px;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightgray;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+/* header-------------------------------------------- */
+header{
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+nav{
+    border: 1px solid blue;
+    width: 87%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin: 0;
+}
+ul.nav-items{
+    margin-right: 20px;
+}
+ul.nav-items>li{
+    display: inline-block;
+    padding: 0px 30px;
+    color: darkgray;
+    line-height: 60px;
+}
+.logo{
+    padding: 5px;
+    width: calc(100%-87%);
+    margin: 10px;
+}
+
+/* footer-------------------------------------------- */
+footer{
+    display: flex;
+    justify-content: center;
+    border: 1px solid blue;
+    width: 100%;
+    line-height: 60px;
+    height: 10vh;
+    border-top: 1px solid white;
+}
+
+/* #content-wrap */
+#content-wrap{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: center;
+}
+/* aside--------------------------------------------- */
+aside{
+    width: 20%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #888;
+    padding: 25px;
+}
+aside ul li{
+    display: block;
+}
+aside ul li a{
+    display: block;
+    color: white;
+    padding: 10px 0 10px 20px;
+}
+aside ul li a.active{
+    background-color: lightblue;
+}
+aside ul li a:hover:not(.active){
+    background-color: gray;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 10px;
+}
+h1{
+    font-size: 1.7em;
+}
+/* section */
+section{
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+article{
+    width: 22%;
+    margin: 3px;
+    background-color: #fff;
+    padding: 10px;
+}
