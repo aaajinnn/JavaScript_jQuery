@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window 객체</title>
+    <style>
+        #circle{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // confrim() - 확인창열기
+        function question(){
+            let yesNo = window.confirm("정말 삭제할까요?");
+            if(yesNo){
+                alert('삭제합니다.');
+            }
+        }
+
+        // open(), close()
+        let win = null;
+        function openWin(){
+            win = window.open("page01.html","_blank","width=500, height=500, left=200, top=200");
+            // alert(win);
+        }
+        function closeWin(){
+            if(win!=null){
+                win.close();
+                win = null;
+            }
+        }
+
+        // setTimeout() / clearTimeout()
+        let wid = null;
+        function show(){
+            alert('3초뒤에 나타내기');
+        }
+        function alarm(){
+            wid = setTimeout(show, 3000);
+        }
+        function clearTime(){
+            if(wid!=null){
+                clearTimeout(wid);
+                wid = null;
+            }
+        }
+
+        // setInterval()/clearInterval() : 주기적으로 특정 함수를 계속 실행하는 함수
+        let x = 20; // 원의 x좌표
+        function move(){
+            let obj = document.getElementById("circle");
+            // alert(obj);
+            obj.style.backgroundColor = 'tomato';
+
+            // 원을 주기적으로 움직이기
+            if(wid == null){
+                wid = setInterval(function(){
+                    if(x > 900){ // 제자리로 돌아오게 하기
+                        x = 20;
+                    }
+                    console.log('x : ', x);
+                    obj.style.position = 'absolute';
+                    obj.style.left = x + 'px';
+                    x += 5;
+                }, 30);
+            }
+        }
+        function stopMove(){
+                if(wid != null){
+                    clearInterval(wid);
+                    wid = null;
+                }
+            }
+
+    </script>
+
+    <button onclick="question()">Confirm</button>
+    <br>
+    <button onclick="openWin()">팝업창 열기</button>
+    <button onclick="closeWin()">팝업창 닫기</button>
+    <br>
+    <button onclick="alarm()">setTimeout</button>
+    <button onclick="clearTime()">clearTimeout</button>
+    <br>
+    <button onclick="move()">setInterval</button>
+    <button onclick="stopMove()">clearInterval</button>
+    <br><br>
+    <div id="circle">
+
+    </div>
+</body>
+</html>

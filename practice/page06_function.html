@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hosting</title>
+</head>
+<body>
+    <h1>함수, 메서드(function, method)</h1>
+    <hr>
+
+    <script>
+        // [1] 매개변수x, 반환값x
+        function go(){
+            alert('구글로 가요');
+            // location.href = 'http://www.google.com';
+        }
+        // go();
+
+        // [2] 매개변수o, 반환값x
+        const goWhere = function(url){
+            alert(url + '로 갑니다.');
+            location.href = url;
+        }
+        // goWhere('http://www.naver.com');
+
+        // [3] 매개변수x, 반환값o
+        function show(){
+            console.log("show()호출됨");
+            return '별별별';
+        }
+        // show();
+        var star = show();
+        // alert(star);
+
+        // [4] 매개변수o, 반환값o
+        var sum = function(x, y){
+            let z = x + y;
+            console.log(`${x} + ${y} = ${z}`);
+            return z;
+        }
+        let money = sum(20, 30);
+        // alert(money);
+        
+        
+    </script>
+
+    <button id="go()">Go Google</button>
+    <a href="">Go Naver</a>
+</body>
+</html>

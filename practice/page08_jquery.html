@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#h2').css('background-color', 'beige')
+            $('#h2').css('border', '2px double blue')
+            $('#h2').css('color', 'white')
+        })
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                let id = $('#id').val();
+                if(id.length < 5 || id.length > 10){
+                    $('#result').html(`<h3>ID는 5~10자 이내로 입력하세요.</h3>`).css('color','red')
+                    $('#id').focus();
+                    return;
+                }else{
+                    $('#result').html(`<h3>유효한 ID입니다.</h3>`).css('color','green')
+                }
+            })
+            $('#btn2').click(function(){
+                let pw1 = $('#pw1').val();
+                let pw2 = $('#pw2').val();
+                if(pw1 == pw2){
+                    $('#result').html(`<h3>비밀번호가 일치합니다.</h3>`)
+                }else{
+                    $('#result').html(`<h3>비밀번호가 일치하지 않습니다.</h3>`)
+                    $('#pw2').focus();
+                    return;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>jQuery - 자바스크립트 라이브러리</h1>
+    <h2 id="h2">jQuery라이브러리 참조방법</h2>
+    <h3 class="cls1">[1] 다운로드 받아 설치 (http://jquery.com)</h3>
+    <h3 class="cls2">[2] CDN(Content Delivery Network)방식으로 참조</h3>
+    <hr>
+
+    <h1>CDN방식으로 jQuery참조</h1>
+    아이디 : <input type="text" name="id" id="id"><br>
+    <button id="btn1">입력 글자수 확인</button>
+    <hr>
+    패스워드1 : <input type="text" name="pw1" id="pw1"><br>
+    패스워드2 : <input type="text" name="pw2" id="pw2"><br>
+    <button id="btn2">비밀번호 일치 확인</button>
+    <hr>
+    <div id="result">
+
+    </div>
+</body>
+</html>
