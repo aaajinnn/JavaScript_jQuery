@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page22_function.html</title>
+</head>
+<body>
+    <h1>함수, 메소드 (function, method)</h1>
+    <hr>
+    <script>
+        /*
+            #함수 구성 방법
+           [1]
+            function 함수명([매개변수]){    ==> hoisting(끌어올림) 지원
+                기능
+                [return 값]
+            }
+
+            [2] literal방식으로 구성    ==> hoisting 지원 안됨
+                const 함수명 = function([매개변수]){
+                [return 값]
+            }
+        */
+
+        // [1] 매개변수x, 반환값x
+        // go(); 이 위치에서도 호출 가능 ==> hoisting
+        function go(){
+            alert('구글로 가요');
+            location.href = 'http://www.google.com';
+        }
+        // go();
+
+        // goWhere('http://www.daum.net'); ==> hoisting(X)
+        // [2] 매개변수o, 반환값x
+        const goWhere = function(url){ // 리터럴 방식은 함수를 구성 한 후 그 아래에서 호출해야함
+            alert(url + "로 갑니다");
+            location.href = url;
+        }
+        // goWhere('http://www.naver.com');
+
+        // [3] 매개변수x, 반환값o (반환값이 있다면 return(반환값)이 있어야 한다.)
+        function show(){
+            console.log("show()호출됨...");
+            return '★★★★★'; // return문은 함수의 가장 끝에 작성
+            // show()함수를 호출한 쪽으로 '★★★★★'문자열을 돌려준다.
+        }
+        show();
+        // 반환값이 있는 함수는 함수 호출 할 때 반환값을 받아줄 변수를 선언하자
+        var star = show();
+        // alert(star);
+        
+        // [4] 매개변수o, 반환값o
+        // 매개변수 2개 받아서 곱하기를 수행하고 곱한 결과값을 반환하는 함수를 구성하여 함수 호출해보기
+        var plus = function(x, y){
+            let z = x + y;
+            console.log(`${x} + ${y} = ${z}`);
+            return z;
+        }
+        let money = plus(20, 30);
+        // alert(money * 2);
+
+        // 함수명 goWhere2, prompt 이용해서 어디로갈까요(url주소 입력), 입력받은 url로 이동하기(goWhere함수 활용)
+        function goWhere2(){
+            let url = prompt('어디로 갈까요? url주소를 입력하세요.');
+            if(!url){
+                return;
+            }
+            goWhere(url); // 이미 구현된 기능이 있다면 불러오기
+        }
+    </script>
+    
+    <button onclick="go()">Go Google</button>
+    <a href="http://www.naver.com">Go Naver</a>
+    <hr>
+    <button onclick="goWhere2()">Go Anywhere</button>
+    <a href="#" onclick="goWhere2()">Go Anywhere2</a>
+    <!-- href속성에 자바스크립트 함수를 동작시키려면 javascript: 프로토콜을 붙여준다. -->
+    <a href="javascript:goWhere2()">Go Anywhere3</a>  
+
+</body>
+</html>
+<!-- page22_function.html -->

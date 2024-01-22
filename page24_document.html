@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page24_document.html</title>
+    <script>
+        /*document객체의 속성과 함수
+          [1] title 속성: 현재 문서의 제목을 출력하거나 설정
+          [2] lastModified속성: 현재 html문서가 마지막에 저장된 시간
+          [3] write() 함수
+          [4] getElementById('아이디명'), querySelector(selector), 
+                getElementsByTagName('태그명'), getElementsByClassName('클래스명')
+                querySelectorAll(선택자)
+          [5] fgColor속성: 글자색
+          [6] bgColor속성: 배경색
+        */
+        
+        // id가 btn인 객체를 얻어오기 => getElementById()
+        /* let b1 = document.getElementById("btn");
+             alert(b1); // null ==> 위에서부터 해석하므로 btn을 찾을 수 없다.
+        */
+       // 이런 경우에
+       let b1 = null;
+        window.onload = function(){
+            // window객체가 메모리에 다 로드되고 난 후 익명함수를 수행함.
+            // b1 = document.getElementById("btn");
+            b1 = document.querySelector("#btn"); // 선택자
+            // alert("b1 : " + b1); 
+            // 아래 <script>의 b1이 먼저 뜬다.(window.onload는 <body>의 메모리들을 수행한 후에서야 실행되기 때문)
+            b1.style.backgroundColor = "orange";
+            b1.style.border = "none";
+
+            // tag명이 button인 요소를 얻어오기 => getElementsByTagName(), querySelectorAll()
+            // let btns = document.getElementsByTagName("button");
+            let btns = document.querySelectorAll("button"); // 태그 선택자
+            // alert("btns : " + btns); // btns : [object HTMLCollection] ==> 여러 html 요소를 담고있는 객체
+            // alert(btns.length); // 2
+            // 인덱스 번호로 가져오기
+            btns[0].style.padding = "8px";
+            btns[1].style.backgroundColor = "green";
+            btns[1].style.color = "#fff";
+        }
+
+        function change(){
+            // document의 배경색,글자색,title 변경하기
+            document.bgColor = "yellow";
+            document.fgColor = "maroon";
+            document.title = "문서제목";
+        }
+        const changeList = function(){
+            // class명이 js인 li요소들을 얻어오기 
+            //  => getElementsByClassName(), querySelectorAll()
+            // let lists = document.getElementsByClassName("js");
+            let lists = document.querySelectorAll(".js");
+            // lists[0].style.border = "thick dashed lightblue";
+            for(let i = 0; i < lists.length; i++){
+                lists[i].style.border = "thick dashed lightblue";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>BOM객체 - document객체</h1>
+    <hr>
+
+    <button id="btn" onclick="change()">Click Me</button> <!-- btns[0] -->
+    <button onclick="changeList()">Click Me2</button> <!-- btns[1] -->
+    <hr color="red">
+    <ul>
+        <li id="html">HTML</li>
+        <li id="css">CSS</li>
+        <li class="js">JavaScript</li>
+        <li class="js">jQuery</li>
+        <li class="js">React</li>
+    </ul>
+
+    <script>
+        // id가 btn인 객체를 얻어와서 배경색을 yellow로, border는 none으로 주기
+        b1 = document.getElementById("btn");
+        // alert(b1); // [object HTMLButtonElement]
+    </script>
+</body>
+</html>
+<!-- page24_document.html -->

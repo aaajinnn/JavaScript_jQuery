@@ -32,7 +32,9 @@
                 check.innerHTML="<h3 style='color:green'>"+ id +"님 환영합니다!</h3>";
             }else if(id!="root"||pw!=1234){
                 check.innerHTML="<h3 style='color:red'>실패!! 아이디 또는 비밀번호가 틀려요</h3>";
+                return;
             }
+            location.href='main.html';
         } 
     </script>
 </body>
