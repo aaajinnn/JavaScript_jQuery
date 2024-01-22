@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page27_jquery.html</title>
+    <!-- CDN방식 참조-------------------------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- -------------------------------------------------------------------------------------->
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){ //function() : 이벤트처리 함수
+                // alert('a');
+                // jQuery함수 : val(), text(), htrml(), attr(),...
+                // input의 value값을 알아내는 함수 : val()
+                let uid = $('#id').val();
+                if(uid.length < 5 || uid.length > 10){
+                    //alert('5자 이상 10자 이내로 입력하세요');
+                    //document.querySelector('#result').innerHTML = "<h3>ID는 5~10자 이내로 입력하세요</h3>";
+                    $('#result').html('<h3>ID는 5~10자 이내로 입력하세요</h3>').css('color','red')
+                    $('#id').focus();
+                    return;
+                }else{
+                    //document.querySelector('#result').innerHTML = "<h3>유효한 ID입니다.</h3>";
+                    $('#result').html('<h3>유효한 ID입니다.</h3>').css('color','green')
+                }
+            }); // #btn1 click ---------
+            $('#btn2').click(function(){
+                let upw1 = $('#pw1').val();
+                let upw2 = $('#pw2').val();
+                if(upw1 == upw2){
+                    $('#result').html('<h3>비밀번호가 일치합니다.</h3>')
+                }else{
+                    $('#result').html('<h3>비밀번호가 일치하지 않습니다.</h3>')
+                }
+            })
+        }); 
+    </script>
+</head>
+<body>
+    <h1>CDN방식으로 jQuery참조</h1>
+    아이디 : <input type="text" name="id" id="id"><br>
+    <button id="btn1">입력 글자수 확인</button>
+    <hr>
+    패스워드1 : <input type="text" name="pw1" id="pw1"><br>
+    패스워드2 : <input type="text" name="pw2" id="pw2"><br>
+    <button id="btn2">비밀번호 일치 확인</button>
+    <hr>
+    <div id="result">
+
+    </div>
+</body>
+</html>
+<!-- page27_jquery.html -->
